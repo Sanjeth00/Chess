@@ -17,19 +17,30 @@ public class GameWindow extends JFrame {
         gameWindow.setLayout(null);
         gameWindow.getContentPane().setBackground(Color.BLACK);
 
-        layout = new JPanel();
         chessBoard = new JPanel();
         menu = new JPanel();
 
-        layout.setBounds(60,30,800,800);
         chessBoard.setBounds(140,110,640,640);
-        layout.setBackground(new Color(150,75,0));
-        menu.setBounds(900,30,400,800);
-        chessBoard.setLayout(new GridLayout(0,9));
-        chessBoard.setBorder(new LineBorder(Color.black));
+        menu.setBounds(900,110,500,640);
+        menu.setBackground(Color.BLACK);
+        menu.setBorder(new LineBorder(Color.WHITE));
+        chessBoard.setLayout(new GridLayout(0,8));
+        chessBoard.setBorder(new LineBorder(Color.BLACK));
+
+        for (int i = 0; i < 8; i++){
+            for (int j = 0; j < 8; j++) {
+                squares[i][j] = new JButton();
+                if ((i+j) % 2 == 0) {
+                    squares[i][j].setBackground(Color.WHITE);
+                }
+                else {
+                    squares[i][j].setBackground(Color.BLACK);
+                }
+                chessBoard.add(squares[i][j]);
+            }
+        }
 
         gameWindow.add(chessBoard);
-        gameWindow.add(layout);
         gameWindow.add(menu);
         gameWindow.setVisible(true);
     }
