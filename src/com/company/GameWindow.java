@@ -8,6 +8,7 @@ public class GameWindow extends JFrame {
 
     private JPanel layout, chessBoard, menu;
     private JButton[][] squares = new JButton[8][8];
+    private JButton numbers, letters;
 
     public GameWindow() {
 
@@ -28,6 +29,7 @@ public class GameWindow extends JFrame {
         chessBoard.setBorder(new LineBorder(Color.BLACK));
 
         for (int i = 0; i < 8; i++){
+            numbers = new JButton();
             for (int j = 0; j < 8; j++) {
                 squares[i][j] = new JButton();
                 if ((i+j) % 2 == 0) {
@@ -38,6 +40,22 @@ public class GameWindow extends JFrame {
                 }
                 chessBoard.add(squares[i][j]);
             }
+
+            numbers.setText(String.valueOf(i+1));
+            numbers.setBounds(60, 670-(80*i), 80,80);
+            numbers.setOpaque(false);
+            numbers.setContentAreaFilled(false);
+            numbers.setBorderPainted(false);
+
+            letters = new JButton();
+            letters.setText(String.valueOf((char)(i+65)));
+            letters.setBounds(140+(80*i), 30,80,80);
+            letters.setOpaque(false);
+            letters.setContentAreaFilled(false);
+            letters.setBorderPainted(false);
+
+            gameWindow.add(letters);
+            gameWindow.add(numbers);
         }
 
         gameWindow.add(chessBoard);
