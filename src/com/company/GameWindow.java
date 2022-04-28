@@ -40,6 +40,7 @@ public class GameWindow extends JFrame {
                     squares[i][j].setBackground(Color.BLACK);
                 }
 
+                // To-do
                 // Kanskje endre for loop slik at det blir lettere å legge til brikker, og flytte brikker
                 // Fiks plassering for brikker
 
