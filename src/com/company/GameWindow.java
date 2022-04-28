@@ -13,7 +13,6 @@ public class GameWindow extends JFrame {
     public GameWindow() {
 
         JFrame gameWindow = new JFrame("Chess");
-        gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameWindow.setSize(1920,1080);
         gameWindow.setLayout(null);
         gameWindow.getContentPane().setBackground(Color.BLACK);
@@ -28,6 +27,8 @@ public class GameWindow extends JFrame {
         chessBoard.setLayout(new GridLayout(0,8));
         chessBoard.setBorder(new LineBorder(Color.BLACK));
 
+
+
         for (int i = 0; i < 8; i++){
             numbers = new JButton();
             for (int j = 0; j < 8; j++) {
@@ -38,7 +39,20 @@ public class GameWindow extends JFrame {
                 else {
                     squares[i][j].setBackground(Color.BLACK);
                 }
+
+                // Kanskje endre for loop slik at det blir lettere å legge til brikker, og flytte brikker
+                // Fiks plassering for brikker
+
+                JButton b=new JButton(new ImageIcon("C:\\Users\\sanje_8hf4b1p\\chess\\resources\\wpawn.png"));
+                b.setSize(80,80);
+                b.setOpaque(false);
+                b.setContentAreaFilled(false);
+                b.setBorderPainted(false);
+                gameWindow.add(b);
+
                 chessBoard.add(squares[i][j]);
+
+
             }
 
             numbers.setText(String.valueOf(i+1));
@@ -61,5 +75,6 @@ public class GameWindow extends JFrame {
         gameWindow.add(chessBoard);
         gameWindow.add(menu);
         gameWindow.setVisible(true);
+        gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

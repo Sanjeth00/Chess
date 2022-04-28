@@ -1,9 +1,13 @@
 
-Chess
+#Chess
 
-https://www.geeksforgeeks.org/design-a-chess-game/ http://massivetechinterview.blogspot.com/2015/07/design-chess-game-using-oo-principles.html http://swcodes.blogspot.com/2012/09/chess-game-design.html https://en.wikipedia.org/wiki/Rules_of_chess https://github.com/jlundstedt/chess-java/tree/master/src
+https://www.geeksforgeeks.org/design-a-chess-game/ 
+http://massivetechinterview.blogspot.com/2015/07/design-chess-game-using-oo-principles.html 
+http://swcodes.blogspot.com/2012/09/chess-game-design.html 
+https://en.wikipedia.org/wiki/Rules_of_chess 
+https://github.com/jlundstedt/chess-java/tree/master/src
 
-git commands
+###git commands
 
 git remote set-url origin new.git.url/here 
 git remote -v
@@ -26,15 +30,11 @@ Move: Represents a game move, containing the starting and ending spot. The Move 
 Game: This class controls the flow of a game. It keeps track of all the game moves, which player has the current turn, and the final result of the game.
 Let’s look at the details. These codes are self-explanatory. You can have a look at the properties/variables and methods of different classes.
 
-Task for today:
+###Tasks:
 - Board
-    * layout = [][]
-    * Pieces
+    * fix layout[][]
+    * add pieces using nested loop
 
-Task for later:
-- Board
-    * Piece
-        - String arg = "C:/Spill/out/production/Spill/bilder/bp.png";
 - Spot
 - Player
 - Move
